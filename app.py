@@ -12,8 +12,7 @@ if arquivo:
     if arquivo.name.endswith(".csv"):
         df = pd.read_csv(arquivo, sep=";", encoding="latin1", on_bad_lines="skip")
     else:
-        df = pd.read_excel(arquivo)
-
+        df = pd.read_excel(arquivo, engine="openpyxl")
     st.subheader("📋 Dados carregados")
     st.dataframe(df, use_container_width=True)
 
